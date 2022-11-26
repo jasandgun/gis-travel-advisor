@@ -4,20 +4,24 @@ import { CircularProgress, Grid, Typography, InputLabel, MenuItem, FormControl, 
 import PlaceDetails from '../PlaceDetails/PlaceDetails';
 import { Container, StyledFormControl, StyledGrid, ProgressWrapper } from './ListStyles';
 
+export interface Place {
+  name: string;
+};
+
 function List() {
   const [type, setType] = useState('restaurants');
   const [rating, setRating] = useState('0');
 
-  const places: Array<any> = [
+  const places: Array<Place> = [
     { name: 'restaurants'},
     { name: 'hotels'},
     { name: 'attractions'},
-    { name: 'restaurants'},
-    { name: 'hotels'},
-    { name: 'attractions'},
-    { name: 'restaurants'},
-    { name: 'hotels'},
-    { name: 'attractions'},
+    { name: 'restaurants 1'},
+    { name: 'hotels 1'},
+    { name: 'attractions 1'},
+    { name: 'restaurants 2'},
+    { name: 'hotels 2'},
+    { name: 'attractions 2'},
   ];
 
   return (
