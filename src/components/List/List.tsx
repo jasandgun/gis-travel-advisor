@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { CircularProgress, Grid, Typography, InputLabel, MenuItem, FormControl, Select } from '@mui/material';
+import React, {useState} from 'react';
+import {CircularProgress, Grid, Typography, InputLabel, MenuItem, FormControl, Select} from '@mui/material';
 
 import PlaceDetails from '../PlaceDetails/PlaceDetails';
-import { Container, StyledFormControl, StyledGrid, ProgressWrapper } from './ListStyles';
-import { Place } from './ListTypes'
+import {Container, StyledFormControl, StyledGrid, ProgressWrapper} from './ListStyles';
+import {Place} from './ListTypes'
 
-function List({places}: {places: Array<Place>}) {
+function List({places}: { places: Array<Place> }) {
   const [type, setType] = useState('restaurants');
   const [rating, setRating] = useState('0');
 
@@ -42,6 +42,6 @@ function List({places}: {places: Array<Place>}) {
       </StyledGrid>
     </Container>
   );
-};
+}
 
 export default List;

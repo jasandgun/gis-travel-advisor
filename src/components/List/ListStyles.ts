@@ -1,17 +1,17 @@
-import { FormControl, Grid } from '@mui/material';
-import { styled } from '@mui/material/styles';
+import {FormControl, Grid} from '@mui/material';
+import {styled} from '@mui/material/styles';
 
-const StyledFormControl = styled(FormControl)(({ theme }) => ({
-  margin: theme.spacing(1), 
-  minWidth: 120, 
+const StyledFormControl = styled(FormControl)(({theme}) => ({
+  margin: theme.spacing(1),
+  minWidth: 120,
   marginBottom: '30px',
   marginTop: '10px',
 }));
 
 const ProgressWrapper = styled('div')(() => ({
-  height: '600px', 
+  height: '600px',
   display: 'flex',
-  justifyContent: 'center', 
+  justifyContent: 'center',
   alignItems: 'center',
 }));
 
@@ -20,12 +20,12 @@ const Container = styled('div')(() => ({
 }));
 
 const StyledGrid = styled(Grid)(() => ({
-  height: '75vh', 
+  height: '75vh',
   overflow: 'auto',
 }));
 
 
-export{
+export {
   Container,
   StyledFormControl,
   StyledGrid,

@@ -1,7 +1,7 @@
 import axios from 'axios';
-import { Coords } from '../components/Map/MapTypes';
+import {Coords} from '../components/Map/MapTypes';
 
-const requestUrl:string = 'https://travel-advisor.p.rapidapi.com/restaurants/list-in-boundary';
+const requestUrl: string = 'https://travel-advisor.p.rapidapi.com/restaurants/list-in-boundary';
 
 
 const getPlacesData = async (sw: Coords, ne: Coords) => {
@@ -16,15 +16,15 @@ const getPlacesData = async (sw: Coords, ne: Coords) => {
         tr_longitude: ne.lng,
       },
       headers: {
-        'X-RapidAPI-Key': 'KEY',
+        'X-RapidAPI-Key': '3930a24209mshd84b03451187b79p106447jsn850d27219516',
         'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com'
       }
     };
-    const { data: { data } } = await axios.request(options)
+    const {data: {data}} = await axios.request(options)
     return data;
   } catch (error) {
     console.error(error);
   }
 }
 
-export { getPlacesData };
+export {getPlacesData};

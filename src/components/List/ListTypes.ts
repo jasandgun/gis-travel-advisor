@@ -2,4 +2,4 @@ type Place = {
   name: string;
 };
 
-export type { Place };
+export type {Place};

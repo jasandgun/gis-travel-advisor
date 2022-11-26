@@ -1,4 +1,5 @@
 import React from 'react';
+
 /**
  * user defined types for map component
  */
@@ -16,4 +17,4 @@ type MapParams = {
   coordinates: Coords,
 }
 
-export type { Bounds, Coords, MapParams };
+export type {Bounds, Coords, MapParams};
