@@ -1,5 +1,5 @@
 import React from 'react';
-import { Place } from '../List/List'
+import { Place } from '../List/ListTypes'
 
 function PlaceDetails({ place }: { place: Place }) {
   return (

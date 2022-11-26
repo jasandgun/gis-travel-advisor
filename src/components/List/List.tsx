@@ -3,26 +3,11 @@ import { CircularProgress, Grid, Typography, InputLabel, MenuItem, FormControl, 
 
 import PlaceDetails from '../PlaceDetails/PlaceDetails';
 import { Container, StyledFormControl, StyledGrid, ProgressWrapper } from './ListStyles';
+import { Place } from './ListTypes'
 
-export interface Place {
-  name: string;
-};
-
-function List() {
+function List({places}: {places: Array<Place>}) {
   const [type, setType] = useState('restaurants');
   const [rating, setRating] = useState('0');
-
-  const places: Array<Place> = [
-    { name: 'restaurants'},
-    { name: 'hotels'},
-    { name: 'attractions'},
-    { name: 'restaurants 1'},
-    { name: 'hotels 1'},
-    { name: 'attractions 1'},
-    { name: 'restaurants 2'},
-    { name: 'hotels 2'},
-    { name: 'attractions 2'},
-  ];
 
   return (
     <Container>
@@ -49,7 +34,7 @@ function List() {
         </Select>
       </StyledFormControl>
       <StyledGrid container spacing={3}>
-        {places?.map((place, i) => (
+        {places?.map((place: Place, i: React.Key | null | undefined) => (
           <Grid item xs={12} key={i}>
             <PlaceDetails place={place}/>
           </Grid>
