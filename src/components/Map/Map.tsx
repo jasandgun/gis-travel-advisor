@@ -9,9 +9,8 @@ import {MapContainer, MarkerContainer, PointerImg, StyledPaper} from './MapStyle
 import {MapParams, defaultCoords} from './MapTypes';
 import {restaurantPlaceholderImg} from "../PlaceDetails/PlaceDetails";
 
-function Map({setCoordinates, setBounds, coordinates, places}: MapParams) {
+function Map({setCoordinates, setBounds, coordinates, places, setChildClicked}: MapParams) {
   const isMobile = useMediaQuery('(max-width: 600px)');
-  console.info(places)
 
   return (
     <MapContainer>
@@ -27,7 +26,7 @@ function Map({setCoordinates, setBounds, coordinates, places}: MapParams) {
           setCoordinates({lat: event.center.lat, lng: event.center.lng});
           setBounds({ne: event.marginBounds.ne, sw: event.marginBounds.sw});
         }}
-        // onChildClick={(child) => setChildClicked(child)}
+        onChildClick={(child) => setChildClicked(child)}
       >
         {places?.map((place, i) => (
           <MarkerContainer

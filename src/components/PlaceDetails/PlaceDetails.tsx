@@ -4,13 +4,19 @@ import {LocationOn} from "@mui/icons-material";
 import {Phone} from "@mui/icons-material";
 import {Rating} from "@mui/material";
 
-import {Award, Place} from '../../api/PlaceDetailsResponse';
+import {Award, PlaceDetailsParams} from './PlaceDetailsTypes';
 import {StyledChip, SpacingTypography, SubtitleTypography,} from "./PlaceDetailsStyles";
 
 const restaurantPlaceholderImg: string =
   'https://www.foodserviceandhospitality.com/wp-content/uploads/2016/09/Restaurant-Placeholder-001.jpg';
 
-function PlaceDetails({place}: { place: Place }) {
+function PlaceDetails({place, selected, refProp}: PlaceDetailsParams) {
+
+  if(selected) {
+    console.log({refProp});
+    refProp?.current?.scrollIntoView({behavior: "smooth", block: "start"})
+  }
+
   return (
     <Card elevation={6}>
       <CardMedia

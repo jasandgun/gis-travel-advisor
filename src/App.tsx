@@ -13,6 +13,9 @@ function App() {
   const [places, setPlaces] = useState([]);
   const [coordinates, setCoordinates] = useState<Coords>({} as Coords);
   const [bounds, setBounds] = useState<Bounds>({} as Bounds);
+  //action states
+  const [childClicked, setChildClicked] = useState(-1);
+  const [isLoading, setIsLoading] = useState(false);
 
   // get current user location
   useEffect(() => {
@@ -23,10 +26,15 @@ function App() {
 
   // call places data
   useEffect(() => {
-    getPlacesData(bounds.sw, bounds.ne)
-      .then((data: any) => {
-        setPlaces(data);
-      })
+    if(bounds) {
+      setIsLoading(true);
+
+      getPlacesData(bounds.sw, bounds.ne)
+        .then((data: any) => {
+          setPlaces(data);
+          setIsLoading(false);
+        })
+    }
   }, [coordinates, bounds]);
 
   return (
@@ -35,7 +43,11 @@ function App() {
       <Header/>
       <Grid container spacing={3} style={{width: '100%'}}>
         <Grid item xs={12} md={4}>
-          <List places={places}/>
+          <List
+            places={places}
+            childClicked={childClicked}
+            isLoading={isLoading}
+          />
         </Grid>
         <Grid item xs={12} md={8}>
           <Map
@@ -43,6 +55,7 @@ function App() {
             setBounds={setBounds}
             coordinates={coordinates}
             places={places}
+            setChildClicked={setChildClicked}
           />
         </Grid>
       </Grid>

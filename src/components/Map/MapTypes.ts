@@ -17,6 +17,7 @@ type MapParams = {
   setBounds: React.Dispatch<React.SetStateAction<Bounds>>;
   coordinates: Coords;
   places: Array<Place>;
+  setChildClicked: React.Dispatch<React.SetStateAction<any>>;
 };
 
 // default coordinates and bounds for Jakarta's Monas
