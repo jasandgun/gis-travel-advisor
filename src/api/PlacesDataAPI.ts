@@ -18,14 +18,14 @@ const getPlacesData = async (sw: Coords, ne: Coords) => {
         tr_longitude: ne.lng,
         restaurant_tagcategory_standalone: '10591',
         restaurant_tagcategory: '10591',
-        limit: '30',
+        limit: '20',
         currency: 'IDR',
         open_now: 'false',
         lunit: 'km',
         lang: 'en_US'
       },
       headers: {
-        'X-RapidAPI-Key': '3930a24209mshd84b03451187b79p106447jsn850d27219516',
+        'X-RapidAPI-Key': 'ff51dd79efmsh4b81ed4867b5f43p17e55bjsn274f90414ccf',
         'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com'
       }
     };

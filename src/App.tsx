@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {CssBaseline, Grid} from '@mui/material';
 
-import {getPlacesData} from './api'
+import {getPlacesData} from './api/PlacesDataAPI'
 import Header from './components/Header/Header';
 import List from './components/List/List';
 import Map from './components/Map/Map';
@@ -15,7 +15,7 @@ function App() {
   const [bounds, setBounds] = useState<Bounds>({} as Bounds);
   //action states
   const [childClicked, setChildClicked] = useState(-1);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   // get current user location
   useEffect(() => {
@@ -28,12 +28,11 @@ function App() {
   useEffect(() => {
     if(bounds) {
       setIsLoading(true);
-
       getPlacesData(bounds.sw, bounds.ne)
         .then((data: any) => {
           setPlaces(data);
-          setIsLoading(false);
         })
+      setIsLoading(false);
     }
   }, [coordinates, bounds]);
 
