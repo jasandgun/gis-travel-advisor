@@ -3,7 +3,7 @@ import {CircularProgress, Grid, Typography, InputLabel, MenuItem, FormControl, S
 
 import PlaceDetails from '../PlaceDetails/PlaceDetails';
 import {Container, StyledFormControl, StyledGrid, ProgressWrapper} from './ListStyles';
-import {Place} from './ListTypes'
+import {Place} from '../../api/PlaceDetailsResponse'
 
 function List({places}: { places: Array<Place> }) {
   const [type, setType] = useState('restaurants');
