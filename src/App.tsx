@@ -35,7 +35,7 @@ function App() {
 
   // call places data
   useEffect(() => {
-    if(bounds.sw && bounds.ne) {
+    if (bounds.sw && bounds.ne) {
       setIsLoading(true);
       getPlacesData(type, bounds.sw, bounds.ne)
         .then((data: Array<Place>) => {

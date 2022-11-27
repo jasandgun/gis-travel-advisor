@@ -14,12 +14,12 @@ function Map({setCoordinates, setBounds, coordinates, places, setChildClicked}: 
   return (
     <MapContainer>
       <GoogleMapReact
-        bootstrapURLKeys={{key: 'AIzaSyBTluYPoLi3dCMO2STktm-2NFK82uxM9_Y'}}
+        bootstrapURLKeys={{key: String(process.env.REACT_APP_GOOGLE_MAPS_API_KEY)}}
         defaultCenter={defaultCoords}
         center={coordinates}
         defaultZoom={15}
         margin={[50, 50, 50, 50]}
-        options={{ disableDefaultUI: true, zoomControl: true, styles: MapSkins}}
+        options={{disableDefaultUI: true, zoomControl: true, styles: MapSkins}}
         onChange={(event) => {
           console.log(event)
           setCoordinates({lat: event.center.lat, lng: event.center.lng});

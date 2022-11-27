@@ -22,7 +22,7 @@ const getPlacesData = async (type: Place["type"], sw: Coords, ne: Coords) => {
         lang: 'en_US'
       },
       headers: {
-        'X-RapidAPI-Key': 'ff51dd79efmsh4b81ed4867b5f43p17e55bjsn274f90414ccf',
+        'X-RapidAPI-Key': process.env.REACT_APP_RAPID_API_KEY,
         'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com'
       }
     };
