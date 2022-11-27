@@ -5,15 +5,16 @@ import PlaceDetails from '../PlaceDetails/PlaceDetails';
 import {Container, StyledFormControl, StyledGrid, ProgressWrapper} from './ListStyles';
 import {Place, ListParams} from './ListTypes'
 
-function List({places, childClicked, isLoading}: ListParams) {
-  const [type, setType] = useState('restaurants');
-  const [rating, setRating] = useState('');
+function List({places, childClicked, isLoading, type, setType, rating, setRating}: ListParams) {
   const [elRefs, setElRefs] = useState<Array<RefObject<HTMLDivElement>>>([]);
 
+  // TODO: bug here, ref kept returning null for .current
   useEffect(() => {
-    // if (places) {
-    setElRefs((refs) => Array(places?.length).fill(0).map((_, i) => refs[i] || createRef()));
-    // }
+    setElRefs(
+      (refs) =>
+        Array(places?.length)
+          .fill(0)
+          .map((_, i) => refs[i] || createRef()));
   }, [places]);
 
   return (
@@ -38,11 +39,11 @@ function List({places, childClicked, isLoading}: ListParams) {
             </StyledFormControl>
             <StyledFormControl>
               <InputLabel>Rating</InputLabel>
-              <Select value={rating} onChange={(e) => setRating(e.target.value)}>
+              <Select value={rating} onChange={(e) => setRating(Number(e.target.value))}>
                 <MenuItem value={0}>All</MenuItem>
                 <MenuItem value={3}>Above 3.0</MenuItem>
                 <MenuItem value={4}>Above 4.0</MenuItem>
-                <MenuItem value={4}>Above 4.5</MenuItem>
+                <MenuItem value={4.5}>Above 4.5</MenuItem>
               </Select>
             </StyledFormControl>
             <StyledGrid container spacing={3}>

@@ -20,7 +20,8 @@ type Place = {
   phone?: string;
   price_level?: string;
   ranking: string;
-  rating: string;
+  rating: number;
+  type: string;
   web_url: string;
   website?: string;
 };

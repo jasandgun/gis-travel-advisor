@@ -12,8 +12,9 @@ const restaurantPlaceholderImg: string =
 
 function PlaceDetails({place, selected, refProp}: PlaceDetailsParams) {
 
+  // TODO: bug here, received null for current
   if(selected) {
-    console.log({refProp});
+    // console.log({refProp});
     refProp?.current?.scrollIntoView({behavior: "smooth", block: "start"})
   }
 

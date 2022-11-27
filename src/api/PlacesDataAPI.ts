@@ -1,16 +1,13 @@
-// noinspection SpellCheckingInspection
-
 import axios from 'axios';
 import {Coords} from '../components/Map/MapTypes';
+import {Place} from './PlaceDetailsResponse'
 
-const requestUrl: string = 'https://travel-advisor.p.rapidapi.com/restaurants/list-in-boundary';
 
-
-const getPlacesData = async (sw: Coords, ne: Coords) => {
+const getPlacesData = async (type: Place["type"], sw: Coords, ne: Coords) => {
   try {
     const options = {
       method: 'GET',
-      url: requestUrl,
+      url: `https://travel-advisor.p.rapidapi.com/${type}/list-in-boundary`,
       params: {
         bl_latitude: sw.lat,
         tr_latitude: ne.lat,
