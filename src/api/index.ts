@@ -1,3 +1,5 @@
+// noinspection SpellCheckingInspection
+
 import axios from 'axios';
 import {Coords} from '../components/Map/MapTypes';
 

@@ -5,14 +5,14 @@ import {getPlacesData} from './api'
 import Header from './components/Header/Header';
 import List from './components/List/List';
 import Map from './components/Map/Map';
-import {Bounds, defaultBounds, Coords, defaultCoords} from './components/Map/MapTypes';
+import {Bounds, Coords} from './components/Map/MapTypes';
 
 
 function App() {
   // states for places and locations
   const [places, setPlaces] = useState([]);
-  const [coordinates, setCoordinates] = useState<Coords>(defaultCoords);
-  const [bounds, setBounds] = useState<Bounds>(defaultBounds);
+  const [coordinates, setCoordinates] = useState<Coords>({} as Coords);
+  const [bounds, setBounds] = useState<Bounds>({} as Bounds);
 
   // get current user location
   useEffect(() => {
@@ -42,6 +42,7 @@ function App() {
             setCoordinates={setCoordinates}
             setBounds={setBounds}
             coordinates={coordinates}
+            places={places}
           />
         </Grid>
       </Grid>

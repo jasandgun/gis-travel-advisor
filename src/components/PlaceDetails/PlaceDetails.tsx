@@ -7,7 +7,7 @@ import {Rating} from "@mui/material";
 import {Award, Place} from '../../api/PlaceDetailsResponse';
 import {StyledChip, SpacingTypography, SubtitleTypography,} from "./PlaceDetailsStyles";
 
-const placeHolderURL: string =
+const restaurantPlaceholderImg: string =
   'https://www.foodserviceandhospitality.com/wp-content/uploads/2016/09/Restaurant-Placeholder-001.jpg';
 
 function PlaceDetails({place}: { place: Place }) {
@@ -15,20 +15,28 @@ function PlaceDetails({place}: { place: Place }) {
     <Card elevation={6}>
       <CardMedia
         style={{height: 350}}
-        image={place.photo ? place.photo.images.large.url : placeHolderURL}
+        image={place.photo ? place.photo.images.large.url : restaurantPlaceholderImg}
         title={place.name}
       />
       <CardContent>
         <Typography gutterBottom variant={"h5"}>{place.name}</Typography>
         <Box display={"flex"} justifyContent={"space-between"}>
+          <Rating value={Number(place.rating)} readOnly/>
+          <Typography gutterBottom variant={"subtitle1"}>
+            out of {place.num_reviews} review{place.num_reviews > 1 && 's'}
+          </Typography>
+        </Box>
+        <Box display={"flex"} justifyContent={"space-between"}>
           <Typography variant={"subtitle1"}>Price</Typography>
-          <Typography gutterBottom
-                      variant={"subtitle1"}>{place.price_level ? place.price_level : 'Pricing is unavailable.'}</Typography>
+          <Typography gutterBottom variant={"subtitle1"}>
+            {place.price_level ? place.price_level : 'Pricing is unavailable.'}
+          </Typography>
         </Box>
         <Box display={"flex"} justifyContent={"space-between"}>
           <Typography variant={"subtitle1"}>Ranking</Typography>
-          <Typography gutterBottom
-                      variant={"subtitle1"}>{place.ranking ? place.ranking : 'Ranking is unavailable.'}</Typography>
+          <Typography gutterBottom variant={"subtitle1"}>
+            {place.ranking ? place.ranking : 'Ranking is unavailable.'}
+          </Typography>
         </Box>
         {place?.awards?.map((award: Award) => {
           return (
@@ -69,3 +77,4 @@ function PlaceDetails({place}: { place: Place }) {
 }
 
 export default PlaceDetails;
+export {restaurantPlaceholderImg};

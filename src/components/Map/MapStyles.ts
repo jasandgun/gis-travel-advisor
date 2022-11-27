@@ -1,4 +1,5 @@
 import {styled} from '@mui/material/styles';
+import {Paper} from "@mui/material";
 
 const MapContainer = styled('div')(() => ({
   height: '85vh',
@@ -12,8 +13,21 @@ const MarkerContainer = styled('div')(() => ({
   '&:hover': {zIndex: 2},
 }));
 
+const StyledPaper = styled(Paper)(() => ({
+  padding: '10px',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  width: '100px',
+}));
+
+const PointerImg = styled('img')(() => ({
+  cursor: 'pointer',
+}));
 
 export {
   MapContainer,
   MarkerContainer,
+  PointerImg,
+  StyledPaper,
 };
