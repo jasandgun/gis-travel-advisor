@@ -34,28 +34,21 @@ function Map({setCoordinates, setBounds, coordinates, places, setChildClicked}: 
             key={i}
           >
             {
-              place.name != null ? (
-                <>
-                  {
-                    isMobile ? (
-                      <LocationOnOutlinedIcon color={"primary"} fontSize={"large"}/>
-                    ) : (
-                      <StyledPaper elevation={3}>
-                        <Typography gutterBottom variant={"subtitle2"}>
-                          {place.name}
-                        </Typography>
-                        <PointerImg
-                          src={place.photo ? place.photo.images.large.url : restaurantPlaceholderImg}
-                          alt={place.name}
-                        />
-                        <Rating size={"small"} value={Number(place.rating)} readOnly/>
-                      </StyledPaper>
-                    )
-                  }
-                </>
-              ) : null
+              isMobile ? (
+                <LocationOnOutlinedIcon color={"primary"} fontSize={"large"}/>
+              ) : (
+                <StyledPaper elevation={3}>
+                  <Typography gutterBottom variant={"subtitle2"}>
+                    {place.name}
+                  </Typography>
+                  <PointerImg
+                    src={place.photo ? place.photo.images.large.url : restaurantPlaceholderImg}
+                    alt={place.name}
+                  />
+                  <Rating size={"small"} value={Number(place.rating)} readOnly/>
+                </StyledPaper>
+              )
             }
-
           </MarkerContainer>
         ))}
       </GoogleMapReact>
