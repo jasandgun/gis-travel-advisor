@@ -1,5 +1,5 @@
 import React, {useState, useEffect, createRef, RefObject} from 'react';
-import {CircularProgress, Grid, Typography, InputLabel, MenuItem, FormControl, Select} from '@mui/material';
+import {CircularProgress, Grid, Typography, InputLabel, MenuItem, Select} from '@mui/material';
 
 import PlaceDetails from '../PlaceDetails/PlaceDetails';
 import {Container, StyledFormControl, StyledGrid, ProgressWrapper} from './ListStyles';
@@ -19,7 +19,7 @@ function List({places, childClicked, isLoading, type, setType, rating, setRating
 
   return (
     <Container>
-      <Typography variant="h4">
+      <Typography variant="h5" align={"justify"} padding={1}>
         Where will you go?
       </Typography>
       {

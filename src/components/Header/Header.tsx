@@ -21,7 +21,7 @@ function Header({setCoordinates}: HeaderParams) {
 
   return (
     <Box sx={{flexGrow: 1}}>
-      <AppBar position="static">
+      <AppBar position="static" elevation={0}>
         <Toolbar>
           <IconButton size="large" edge="start" color="inherit" aria-label="open drawer" sx={{mr: 2}}>
             <CardTravelIcon/>

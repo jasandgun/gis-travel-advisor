@@ -2,6 +2,8 @@ import {styled} from '@mui/material/styles';
 import {Paper} from "@mui/material";
 
 const MapContainer = styled('div')(() => ({
+  marginTop: '4vh',
+  marginBottom:'2vh',
   height: '85vh',
   width: '100%',
 }));

@@ -16,7 +16,7 @@ const ProgressWrapper = styled('div')(() => ({
 }));
 
 const Container = styled('div')(() => ({
-  padding: '25px',
+  padding: '15px',
 }));
 
 const StyledGrid = styled(Grid)(() => ({

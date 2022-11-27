@@ -6,6 +6,7 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import {MapContainer, MarkerContainer, PointerImg, StyledPaper} from './MapStyles';
 import {MapParams, defaultCoords} from './MapTypes';
 import {restaurantPlaceholderImg} from "../PlaceDetails/PlaceDetails";
+import MapSkins from "./MapSkins";
 
 function Map({setCoordinates, setBounds, coordinates, places, setChildClicked}: MapParams) {
   const isMobile = useMediaQuery('(max-width: 600px)');
@@ -18,7 +19,7 @@ function Map({setCoordinates, setBounds, coordinates, places, setChildClicked}: 
         center={coordinates}
         defaultZoom={15}
         margin={[50, 50, 50, 50]}
-        options={{ disableDefaultUI: true, zoomControl: true }}
+        options={{ disableDefaultUI: true, zoomControl: true, styles: MapSkins}}
         onChange={(event) => {
           console.log(event)
           setCoordinates({lat: event.center.lat, lng: event.center.lng});
