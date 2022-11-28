@@ -3,7 +3,7 @@ import {CircularProgress, Grid, Typography, InputLabel, MenuItem, Select} from '
 
 import PlaceDetails from '../PlaceDetails/PlaceDetails';
 import {Container, StyledFormControl, StyledGrid, ProgressWrapper} from './ListStyles';
-import {Place, ListParams} from './ListTypes'
+import {Place, ListParams} from '../../types/componentTypes/ListTypes'
 
 function List({places, childClicked, isLoading, type, setType, rating, setRating}: ListParams) {
   const [elRefs, setElRefs] = useState<Array<RefObject<HTMLDivElement>>>([]);

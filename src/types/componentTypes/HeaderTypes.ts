@@ -1,7 +1,7 @@
 /**
  * user defined types for header component
  */
-import {Coords} from "../Map/MapTypes"
+import {Coords} from "./MapTypes"
 import React from "react";
 
 type HeaderParams = {

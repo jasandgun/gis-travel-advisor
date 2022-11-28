@@ -4,7 +4,7 @@ import {LocationOn} from "@mui/icons-material";
 import {Phone} from "@mui/icons-material";
 import {Rating} from "@mui/material";
 
-import {Award, PlaceDetailsParams} from './PlaceDetailsTypes';
+import {Award, PlaceDetailsParams} from '../../types/componentTypes/PlaceDetailsTypes';
 import {StyledChip, SpacingTypography, SubtitleTypography,} from "./PlaceDetailsStyles";
 
 const restaurantPlaceholderImg: string =

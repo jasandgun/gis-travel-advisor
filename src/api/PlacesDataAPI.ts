@@ -1,6 +1,6 @@
 import axios from 'axios';
-import {Coords} from '../components/Map/MapTypes';
-import {Place} from './PlaceDetailsResponse'
+import {Coords} from '../types/componentTypes/MapTypes';
+import {Place} from '../types/apiTypes/PlaceDetailsResponse'
 
 
 const getPlacesData = async (type: Place["type"], sw: Coords, ne: Coords) => {

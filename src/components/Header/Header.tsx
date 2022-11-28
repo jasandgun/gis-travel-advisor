@@ -5,7 +5,7 @@ import TravelExploreIcon from '@mui/icons-material/TravelExplore';
 import CardTravelIcon from '@mui/icons-material/CardTravel';
 
 import {Search, SearchIconWrapper, StyledInputBase} from './HeaderStyles'
-import {HeaderParams} from "./HeaderTypes";
+import {HeaderParams} from "../../types/componentTypes/HeaderTypes";
 
 function Header({setCoordinates}: HeaderParams) {
   const [autocomplete, setAutocomplete] = useState<google.maps.places.Autocomplete>({} as google.maps.places.Autocomplete);
@@ -27,7 +27,7 @@ function Header({setCoordinates}: HeaderParams) {
             <CardTravelIcon/>
           </IconButton>
           <Typography variant="h5" color="inherit" sx={{flexGrow: 1, display: {xs: 'none', sm: 'block'}}}>
-            Travel Advisor
+            GIS Project - Travel Advisor
           </Typography>
           <Autocomplete onLoad={onLoad} onPlaceChanged={onPlaceChanged}>
             <Search>

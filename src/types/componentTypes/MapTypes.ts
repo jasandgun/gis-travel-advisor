@@ -2,7 +2,7 @@
  * user defined types for map component
  */
 import React from 'react';
-import {Place} from "../../api/PlaceDetailsResponse";
+import {Place} from "../apiTypes/PlaceDetailsResponse";
 
 type Coords = {
   lat: number;

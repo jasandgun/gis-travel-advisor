@@ -1,7 +1,7 @@
 /**
  * user defined types for list component
  */
-import {Place} from "../../api/PlaceDetailsResponse";
+import {Place} from "../apiTypes/PlaceDetailsResponse";
 import React from "react";
 
 type ListParams = {
