@@ -1,5 +1,4 @@
-// eslint-disable-next-line import/no-anonymous-default-export
-export default [
+const blueEssence = [
   {
     "featureType": "landscape.natural",
     "elementType": "geometry.fill",
@@ -70,3 +69,5 @@ export default [
     ]
   }
 ]
+
+export default blueEssence;

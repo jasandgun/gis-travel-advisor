@@ -1,12 +1,13 @@
 import React, {useEffect, useState} from 'react';
-import {CssBaseline, Grid} from '@mui/material';
+import {CssBaseline, Grid, ThemeProvider} from '@mui/material';
 
 import {getPlacesData} from './api/PlacesDataAPI'
 import Header from './components/Header/Header';
 import List from './components/List/List';
 import Map from './components/Map/Map';
-import {Place} from './api/PlaceDetailsResponse';
-import {Bounds, Coords} from './components/Map/MapTypes';
+import {Place} from './types/apiTypes/PlaceDetailsResponse';
+import {Bounds, Coords} from './types/componentTypes/MapTypes';
+import {darkTheme} from "./AppStyles";
 
 
 function App() {
@@ -48,7 +49,7 @@ function App() {
   }, [type, bounds]);
 
   return (
-    <>
+    <ThemeProvider theme={darkTheme}>
       <CssBaseline/>
       <Header setCoordinates={setCoordinates}/>
       <Grid container spacing={3} style={{width: '100%'}}>
@@ -73,7 +74,7 @@ function App() {
           />
         </Grid>
       </Grid>
-    </>
+    </ThemeProvider>
   );
 }
 
