@@ -6,7 +6,7 @@ A single-page [application](https://jag-gismap.netlify.app/) with map services e
 ## Features
 
 - Show current location and travel destinations
-- Live preview of the intractable map 
+- Live preview of the interactive map 
 - Display destination cards on the map to indicate where it is located 
 - Filter places based on type or rating
 - Search for desired locations using an autocomplete search bar
